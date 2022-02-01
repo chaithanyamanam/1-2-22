@@ -1,0 +1,29 @@
+#include<stdio.h>  
+void calbyvalueswap(int x,int y)                           
+{ 
+    int temp;
+    temp=x;
+    x=y;
+    y=temp;
+   }
+   void calbyrefswap (int *x, int *y)
+{
+int temp;
+temp = *x;
+*x = *y;
+*y = temp;
+}
+void main( )
+{
+    int x,y;
+    printf("Enter the two numbers to be swapped\n");
+    scanf("%d%d",&x,&y);
+    printf("\nbefore swapping in calbyval x=%d y=%d",x,y);
+    calbyvalueswap(x,y);                                          
+    printf("\nAfter Swapping calbyval x=%d y=%d",x,y);
+    printf("\nbefore swapping in calbyref x=%d y=%d",x,y);
+    calbyrefswap(&x,&y);                                          
+    printf("\nAfter Swapping in calbyref x=%d y=%d",x,y);
+    
+}
+ 
